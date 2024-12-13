@@ -298,8 +298,12 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let res = 0;
+  for (let i = 0; i < n + 1; i += 1) {
+    res += i;
+  }
+  return res;
 }
 
 /**
@@ -313,8 +317,13 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  const res = num
+    .toString()
+    .split('')
+    .map((el) => Number(el))
+    .reduce((acc, el) => acc + el, 0);
+  return res;
 }
 
 /**
@@ -328,8 +337,16 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let res = false;
+  const bitAmount = num
+    .toString(2)
+    .split('')
+    .reduce((acc, intg) => acc + Number(intg), 0);
+  if (bitAmount === 1) {
+    res = true;
+  }
+  return res;
 }
 
 /**
@@ -342,8 +359,8 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
 }
 
 /**
@@ -357,8 +374,8 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  return number.toString(base);
 }
 
 /**
